@@ -1,6 +1,3 @@
-##Author: Bryan Hatfield
-##Email: hatfield.bryan@gmail.com
-##
 ##This is a very simple method for parsing configuration file
 ##and returning its parameters in a hash
 
