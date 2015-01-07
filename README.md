@@ -1,5 +1,6 @@
 This ruby module will parse a config file, here is how it works:
 
+``
 Bryans-MBP:documents Bryan$ irb
 
 irb(main):001:0> load "config_parser.rb"
@@ -35,3 +36,4 @@ send_notifications: true
 irb(main):008:0> ^D
 
 Bryans-MBP:documents Bryan$
+``
