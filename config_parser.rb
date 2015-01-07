@@ -1,3 +1,9 @@
+##Author: Bryan Hatfield
+##Email: hatfield.bryan@gmail.com
+##
+##This is a very simple method for parsing configuration file
+##and returning its parameters in a hash
+
 module ConfigParser
   def convert_numbers(string)
     Integer(string) rescue Float(string) rescue string
@@ -7,6 +13,10 @@ module ConfigParser
     holding_array = Array.new
     params = Hash.new
 
+    unless File.exists?(file) then
+      raise "The configuration file doesn’t exist!"
+    end
+
     text = File.open(file).read
     text.gsub!(/\r\n?/, "\n")
     text.each_line do |line|
@@ -14,9 +24,10 @@ module ConfigParser
       if line.match(/^#/)
         next
       else
-        #Get parameter and add it to the holding array
-        holding_array[0],holding_array[1] = line.to_s.split("=")
-        #Match our regular expression and substitute
+        #Get parameter and add it to the holding array after checking if the line is blank or not
+        holding_array[0],holding_array[1] = line.to_s.to_s.scan(/^.*$/).split("=")
+
+        #Match remove unwanted charactors
         holding_array.collect! do |val|
           val.gsub(/\s+|"|\[|\]/, "")
         end
