@@ -1,5 +1,7 @@
 ##This is a very simple method for parsing configuration file
 ##and returning its parameters in a hash
+##Numeric values are presented as integers and floats acordingly
+##All boolean type values (true/false, yes/no, on,off) are presented as proper true or false
 
 module ConfigParser
   def convert_numbers(string)
