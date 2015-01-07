@@ -12,11 +12,13 @@ module ConfigParser
     holding_array = Array.new
     params = Hash.new
 
+    # Check if file exists
     unless File.exists?(file) then
       raise "The configuration file doesn’t exist!"
     end
 
     text = File.open(file).read
+    # Correct new line breaks
     text.gsub!(/\r\n?/, "\n")
     text.each_line do |line|
       #skip comment lines
@@ -26,7 +28,7 @@ module ConfigParser
         #Get parameter and add it to the holding array
         holding_array[0],holding_array[1] = line.to_s.to_s.scan(/^.*$/).to_s.split("=")
 
-        #Match remove unwanted charactors
+        #Remove unwanted characters
         holding_array.collect! do |val|
           val.gsub(/\s+|"|\[|\]/, "")
         end
@@ -35,7 +37,10 @@ module ConfigParser
       end
     end
 
-    params.update(params){|k,v| convert_numbers(v)}
+    #Make numeric values numeric instead of strings
+    params.update(params){ |k,v| convert_numbers(v) }
+
+    #Convert boolean-like valus to true tre/false booleans
     params.update(params) do |k, v|
       if v == "true" || v == "on" || v == "yes"
         v = true
