@@ -1,7 +1,7 @@
 This ruby module will parse a config file, here is how it works:
 
-``
-Bryans-MBP:documents Bryan$ irb
+
+``Bryans-MBP:documents Bryan$ irb
 
 irb(main):001:0> load "config_parser.rb"
 => true
@@ -35,5 +35,4 @@ send_notifications: true
 
 irb(main):008:0> ^D
 
-Bryans-MBP:documents Bryan$
-``
+Bryans-MBP:documents Bryan$``
