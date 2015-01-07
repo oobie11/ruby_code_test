@@ -40,7 +40,7 @@ module ConfigParser
     #Make numeric values numeric instead of strings
     params.update(params){ |k,v| convert_numbers(v) }
 
-    #Convert boolean-like valus to true tre/false booleans
+    #Convert boolean-like values to true true/false booleans
     params.update(params) do |k, v|
       if v == "true" || v == "on" || v == "yes"
         v = true
