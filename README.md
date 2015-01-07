@@ -1,10 +1,9 @@
 This ruby module will parse a config file, here is how it works:
 
 
-`Bryans-MBP:documents Bryan$ irb
-
-irb(main):001:0> load "config_parser.rb"
-=> true
+`Bryans-MBP:documents Bryan$ irb\n
+irb(main):001:0> load "config_parser.rb"\n
+=> true\n`
 
 irb(main):002:0> include ConfigParser
 => Object
