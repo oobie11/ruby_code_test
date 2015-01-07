@@ -8,13 +8,16 @@ This ruby module will parse a .conf file, here is how it works:
 ### Load the config_parser.rb file and module
   The `config_parser.rb` file need to be located in the same directory you run irb from
 
+
   `> load "config_parser.rb"`
+
 
   `> include ConfigParser`
 
 ### Run the parse_it method and assign it to a params variable
   The .conf file need to be in the same directory you are running irb from
-  
+
+
   `> params = parse_it("test.conf")`
 
 ### Test it
