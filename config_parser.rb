@@ -23,8 +23,8 @@ module ConfigParser
       if line.match(/^#/)
         next
       else
-        #Get parameter and add it to the holding array after checking if the line is blank or not
-        holding_array[0],holding_array[1] = line.to_s.to_s.scan(/^.*$/).split("=")
+        #Get parameter and add it to the holding array
+        holding_array[0],holding_array[1] = line.to_s.to_s.scan(/^.*$/).to_s.split("=")
 
         #Match remove unwanted charactors
         holding_array.collect! do |val|
