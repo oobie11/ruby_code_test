@@ -31,4 +31,5 @@ This ruby module will parse a .conf file, here is how it works:
   returns `2.5` (a proper float)
 
   all `true/yes/on` values return the proper `true`
+  
   all `false/no/off` values return the proper `false`
